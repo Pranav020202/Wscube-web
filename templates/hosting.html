@@ -1,0 +1,73 @@
+{%extends 'base.html'%}
+{%block content%}
+      <!-- order -->
+      <div class="order">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="titlepage text_align_center">
+                     <h2>Check Out Awesome Plans, <br> <span class="blue_light">Order Now</span></h2>
+                     <p>dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                        officia deserunt mollit anim id est laborum."
+                     </p>
+                     <form method="get">
+                        <input type="text" name="servicename" value=""/>
+                        <input type="submit" value="search"/>
+                     </form>
+                  </div>
+
+               </div>
+            </div>
+            <div class="row">
+               {% for n in servicesData %}
+               <div class="col-md-4">
+                  <div id="ho_co" class="order-box_main">
+                     <div class="{{n.service_icon}}">
+                        <h3>{{n.service_title}}</h3>
+                        <p>STARTING  <span>$9</span> PER MONTH</p>
+                        <a href="Javascript:void(0)">Personal use</a>
+                        <ul class="supp">
+                           <li>{{n.service_des}}</li>
+                           <li>24/7 support</li>
+                           <li>Personal use</li>
+                           <li>Unlimited projects</li>
+                           <li>24/7 support</li>
+                        </ul>
+                     </div>
+                     <a class="read_more" href="Javascript:void(0)">Buy Now</a>
+                  </div>
+               </div>
+               {% endfor%}
+
+              
+            </div>
+         </div>
+         <nav aria-label="Page navigation example">
+            <ul class="pagination">
+               {% if servicesData.has_previous %}
+              <li class="page-item">
+               <a class="page-link" href="/hosting/?page=1" tablindex="-1">Frist</a></li>
+              <li class="page-item">
+               <li class="page-item">
+                  <a class="page-link" href="/hosting/?page={{servicesData.previous_page_number}}" > Previous</a></li>
+                 <li class="page-item">
+               {% endif %}
+               {% for n in totalpagelist%}   
+               <li class="page-item">
+               <a class="page-link" href="/hosting/?page={{n}}">{{n}}</a></li>
+               {% endfor %}
+             
+               {% if servicesData.has_next %}
+               
+               <li class="page-item">
+                  <a class="page-link" href="/hosting/?page={{servicesData.next_page_number}}">Next</a></li>
+               <li class="page-item">
+                  <a class="page-link" href="/hosting/?page={{lastpage}}">Last</a></li>
+               {% endif %} 
+            </ul>
+          </nav>
+      </div>
+      <!-- end order -->
+    
+     
+      {%endblock%}

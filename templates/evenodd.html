@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="about">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage text_align_center">
+                <h2>calculator <span class="blue_light">Comapny</span></h2>
+             </div>
+          </div>
+          <div class="row">
+            <div calss="col-12">
+                <form method="post">
+               
+                     {%if error%}
+                     <div class="alert alert-danger" role="alert">
+                     please enter the value
+                     </div>
+                     {%endif%}
+                    {% csrf_token %}
+                    <label> value1 </label>
+                    <input type ="text" name="num1" class="form-control"/>
+                    
+                    <button type="submit">Even | odd</button><br>
+                    <label>output</label>   
+                    <input type="text" value="{{c}}" class="form-control"/>
+                </form>
+        </div>
+    </div>
+ </div>
+{%endblock%}
+

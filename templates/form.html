@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block content%}
+      <!-- contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row ">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <h2>Form <span class="blue_light">Fill</span></h2>
+                  </div>
+               </div>
+               <div class= "row">
+                <div class="col-12">
+                  <form method="post" action="{%url 'submitform'%}">
+                     {% csrf_token %}
+                     <form>
+                        {{form}}
+                         {% comment %} <div>
+                            <label for="">value1</label>
+                            <input type="text" name="num1" value="{{n1}}" class="form-control"/>
+                        </div>
+                        <div>
+                            <label for="">value2</label>
+                            <input type="text" name="num2" value="{{n2}}" class="form-control"/>
+                        </div> {% endcomment %}
+                        <div class ="pt-4">
+                            <button type="submit">Save</button>
+                        </div> 
+                        output
+                        <input type="text" value="{{output}}"/> 
+                     </form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact -->
+      {%endblock%}

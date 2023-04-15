@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="about">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage text_align_center">
+                <h2>calculator <span class="blue_light">Comapny</span></h2>
+             </div>
+          </div>
+          <div class="row">
+            <div calss="col-12">
+                <form method="post">
+                    {% csrf_token%}
+                    <label> value1 </label>
+                    <input type ="text" name="num1" class="form-control"/>
+                    <label>select opr</label>
+                    <select name="opr" class="form-control">
+                        <option value="+">+</option>
+                        <option value="*">*</option>
+                        <option value="-">-</option>
+                        <option value="/">/</option>
+                    </select>
+                    <label> value2 </label>
+                    <input type ="text" name="num2" class="form-control"/>
+                    <button type="submit">calculator</button><br>
+                    <label> output</label>
+                    <input type ="text" value="{{c}}" class="form-control"/>
+       </div>
+    </div>
+ </div>
+ {%endblock%}
+

@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block content%}
+      <!-- contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row ">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <h2>Contact <span class="blue_light">Us</span></h2>
+                  </div>
+               </div>
+               <div class="col-md-10 offset-md-1">
+                  
+                  <form method="POST" action="{% url 'saveenquiry' %}"id="request" class="main_form">
+                     {% csrf_token %}
+                     <div class="row">
+                        
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Phone" type="type" name="Phone">                          
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="type" name="Message" ></textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <input class="send_btn" type="Submit" name="save" >
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact -->
+      {%endblock%}

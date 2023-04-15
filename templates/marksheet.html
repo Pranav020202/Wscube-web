@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="about">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage text_align_center">
+                <h2>marksheet <span class="blue_light">Comapny</span></h2>
+             </div>
+          </div>
+          <div class="row">
+            <div calss="col-12">
+                <form method="post">
+                    {% csrf_token%}
+                    <label> Subject1 </label>
+                    <input type ="text" name="Subject1" class="form-control"/>
+                    <label> Subject2 </label>
+                    <input type ="text" name="Subject2" class="form-control"/>
+                    <label> Subject3 </label>
+                    <input type ="text" name="Subject3" class="form-control"/>
+                    <label> Subject4 </label>
+                    <input type ="text" name="Subject4" class="form-control"/>
+                    <label> Subject5 </label>
+                    <input type ="text" name="Subject5" class="form-control"/>
+                    <button type="submit">marksheet</button><br>
+                                   
+                    <label>Total</label>
+                    <input type ="text" value="{{total}}" class="form-control"/>
+                    <label>per</label>
+                    <input type ="text" value="{{per}}" class="form-control"/>
+                    <label>div</label>
+                    <input type ="text" value="{{div}}" class="form-control"/>
+
+                </form>
+        </div>
+    </div>
+ </div>
+ {%endblock%}
+
